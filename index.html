@@ -89,10 +89,12 @@ nav.scrolled .nav-brand-tag  { color: var(--bark-4); }
 }
 .nav-links a {
   font-size: 13px; font-weight: 400; letter-spacing: .06em;
-  color: var(--bark-2);
+  color: rgba(253,250,245,.8);
   transition: color .25s;
 }
-.nav-links a:hover { color: var(--dark); }
+.nav-links a:hover { color: var(--white); }
+nav.scrolled .nav-links a { color: var(--bark-2); }
+nav.scrolled .nav-links a:hover { color: var(--dark); }
 .nav-book {
   font-size: 12px !important; font-weight: 500 !important;
   letter-spacing: .12em !important; text-transform: uppercase !important;
@@ -364,32 +366,38 @@ nav.scrolled .nav-brand-tag  { color: var(--bark-4); }
 .day-bg-morning {
   background: linear-gradient(145deg,
     #F0E0C4 0%, #E2C898 35%, #D4B272 65%, #C8A45C 100%);
+  background-image: url('/images/day-morning.png');
+  background-size: cover; background-position: center;
 }
 .day-bg-morning::after {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(ellipse at 65% 25%,
-    rgba(255,215,110,.45) 0%, transparent 55%);
+    rgba(255,215,110,.2) 0%, transparent 55%);
 }
 .day-bg-afternoon {
   background: linear-gradient(145deg,
     #6A4C28 0%, #4E3418 35%, #341E08 65%, #221404 100%);
+  background-image: url('/images/day-afternoon.png');
+  background-size: cover; background-position: center;
 }
 .day-bg-afternoon::after {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(ellipse at 55% 18%,
-    rgba(190,120,30,.3) 0%, transparent 50%);
+    rgba(190,120,30,.15) 0%, transparent 50%);
 }
 .day-bg-evening {
   background: linear-gradient(150deg,
     #180C04 0%, #281404 20%,
     #401C06 38%, #58240A 55%,
     #6E2E0C 70%, #50200A 100%);
+  background-image: url('/images/day-evening.png');
+  background-size: cover; background-position: center;
 }
 .day-bg-evening::after {
   content: ''; position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 25% 70%, rgba(150,60,8,.5) 0%, transparent 45%),
-    radial-gradient(ellipse at 68% 32%, rgba(190,100,16,.18) 0%, transparent 40%);
+    radial-gradient(ellipse at 25% 70%, rgba(150,60,8,.3) 0%, transparent 45%),
+    radial-gradient(ellipse at 68% 32%, rgba(190,100,16,.12) 0%, transparent 40%);
 }
 .day-bg-vignette {
   position: absolute; inset: 0; z-index: 1;
@@ -577,15 +585,34 @@ nav.scrolled .nav-brand-tag  { color: var(--bark-4); }
   aspect-ratio: 4/5;
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
+  background: var(--cream-2);
 }
+/* fallback gradient — shows when image missing */
 .product-img-bg {
   position: absolute; inset: 0;
+  z-index: 0;
+}
+/* real product photo — sits above gradient but below chair art */
+.product-img > img[src*="/images/product"] {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .4s;
+}
+.product-img > img[src*="/images/product"].loaded {
+  opacity: 1;
+}
+/* once photo loaded, hide gradient fallback */
+.product-img:has(> img[src*="/images/product"].loaded) .product-img-bg {
+  opacity: 0;
 }
 .pi-1 { background: linear-gradient(150deg,#E4D8C4 0%,#D0BEA0 60%,#BCA880 100%); }
 .pi-2 { background: linear-gradient(150deg,#D8CCBA 0%,#C4B094 60%,#B09878 100%); }
 .pi-3 { background: linear-gradient(150deg,#CEBFAA 0%,#BCA888 60%,#A89068 100%); }
 .product-tag {
-  position: absolute; top: 20px; left: 20px; z-index: 2;
+  position: absolute; top: 20px; left: 20px; z-index: 3;
   font-size: 9px; font-weight: 500;
   letter-spacing: .2em; text-transform: uppercase;
   color: var(--gold-2);
@@ -594,7 +621,7 @@ nav.scrolled .nav-brand-tag  { color: var(--bark-4); }
   border: 1px solid var(--gold-bd);
 }
 .product-chair-art {
-  position: relative; z-index: 1;
+  position: relative; z-index: 2;
   width: 100px; height: 160px;
   background: linear-gradient(170deg, rgba(255,255,255,.6) 0%, rgba(255,255,255,.2) 100%);
   border-radius: 50px 50px 8px 8px;
@@ -609,7 +636,7 @@ nav.scrolled .nav-brand-tag  { color: var(--bark-4); }
   border-radius: 4px;
 }
 .product-img-lbl {
-  position: absolute; bottom: 16px; right: 16px; z-index: 2;
+  position: absolute; bottom: 16px; right: 16px; z-index: 3;
   font-size: 9px; font-weight: 400;
   letter-spacing: .18em; text-transform: uppercase;
   color: var(--bark-4);
@@ -1587,7 +1614,7 @@ nav.scrolled .nav-hamburger span { background: var(--dark); }
   <div class="product-grid">
     <div class="product-card reveal">
       <div class="product-img">
-        <img src="/images/product-m4.webp" alt="Ceragem M4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" onerror="this.style.opacity=0" onload="this.style.opacity=1">
+        <img src="/images/product-m4.webp" alt="Ceragem M4" class="product-photo" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
         <div class="product-img-bg pi-1"></div>
         <span class="product-tag">Introductory</span>
         <div class="product-chair-art"></div>
@@ -1613,7 +1640,7 @@ nav.scrolled .nav-hamburger span { background: var(--dark); }
 
     <div class="product-card reveal" style="transition-delay:.12s">
       <div class="product-img">
-        <img src="/images/product-v4.webp" alt="Ceragem V4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" onerror="this.style.opacity=0" onload="this.style.opacity=1">
+        <img src="/images/product-v4.webp" alt="Ceragem V4" class="product-photo" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
         <div class="product-img-bg pi-2"></div>
         <span class="product-tag">Most Popular</span>
         <div class="product-chair-art"></div>
@@ -1639,7 +1666,7 @@ nav.scrolled .nav-hamburger span { background: var(--dark); }
 
     <div class="product-card reveal" style="transition-delay:.24s">
       <div class="product-img">
-        <img src="/images/product-m10.webp" alt="Ceragem M10" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" onerror="this.style.opacity=0" onload="this.style.opacity=1">
+        <img src="/images/product-m10.webp" alt="Ceragem M10" class="product-photo" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
         <div class="product-img-bg pi-3"></div>
         <span class="product-tag">Flagship</span>
         <div class="product-chair-art"></div>
@@ -1856,8 +1883,8 @@ nav.scrolled .nav-hamburger span { background: var(--dark); }
           <div class="map-pin-name">Ceragem Vancouver</div>
         </div>
         <div class="map-detail">
-          Lougheed, Burnaby BC<br>
-          Free parking available
+          9930 Lougheed Hwy. #101<br>Burnaby, BC V3J 1N3<br><br>
+          <a href="https://maps.app.goo.gl/PCYsFnQeZcy2mugz8" target="_blank" style="color:var(--gold-2);font-size:12px;text-decoration:none;">Open in Google Maps ↗</a>
         </div>
       </div>
     </div>
@@ -1868,14 +1895,19 @@ nav.scrolled .nav-hamburger span { background: var(--dark); }
 
       <div class="info-block">
         <div class="info-lbl">Address</div>
-        <div class="info-val">[Showroom Address]<br>Lougheed, Burnaby, BC</div>
+        <div class="info-val">9930 Lougheed Hwy. #101<br>Burnaby, BC V3J 1N3</div>
+      </div>
+      <div class="info-block">
+        <div class="info-lbl">Phone</div>
+        <div class="info-val"><a href="tel:+16044228585" style="color:inherit;text-decoration:none;">604-422-8585</a></div>
       </div>
       <div class="info-block">
         <div class="info-lbl">Hours</div>
         <div class="hours-grid">
-          <span class="h-day">Mon – Fri</span><span class="h-time">[Hours TBC]</span>
-          <span class="h-day">Saturday</span><span class="h-time">[Hours TBC]</span>
-          <span class="h-day">Sunday</span><span class="h-time">[Hours TBC]</span>
+          <span class="h-day">Mon – Wed</span><span class="h-time">10 AM – 6 PM</span>
+          <span class="h-day">Thu – Fri</span><span class="h-time">10 AM – 6 PM</span>
+          <span class="h-day">Saturday</span><span class="h-time">10 AM – 6 PM</span>
+          <span class="h-day">Sunday</span><span class="h-time">Closed</span>
         </div>
       </div>
       <div class="info-block">
