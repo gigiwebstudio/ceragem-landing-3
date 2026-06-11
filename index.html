@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceragem Vancouver — Wellness & Lifestyle</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:    #F7F2EA;
+  --cream-2:  #EDE6D8;
+  --cream-3:  #E0D6C4;
+  --cream-4:  #CFC3AC;
+  --white:    #FDFAF5;
+  --dark:     #1E1810;
+  --dark-2:   #2C2014;
+  --bark:     #3A2E1E;
+  --bark-2:   #5A4A36;
+  --bark-3:   #7A6A54;
+  --bark-4:   #A09078;
+  --gold:     #B89460;
+  --gold-2:   #A07840;
+  --gold-lt:  #D4B483;
+  --gold-dim: rgba(184,148,96,0.1);
+  --gold-bd:  rgba(184,148,96,0.25);
+  --border:   rgba(58,46,30,0.1);
+  --border-2: rgba(58,46,30,0.06);
+
+  --serif: 'PT Serif', Georgia, serif;
+  --sans:  'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--bark);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; width: 100%; object-fit: cover; }
+a { text-decoration: none; }
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-thumb { background: var(--gold); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; inset: 0 0 auto;
+  z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 32px 60px;
+  transition: padding .4s, background .4s, box-shadow .4s;
+}
+nav.scrolled {
+  padding: 18px 60px;
+  background: rgba(247,242,234,.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 var(--border);
+}
+.nav-brand {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.nav-brand-name {
+  font-family: var(--serif);
+  font-size: 19px; font-weight: 400;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--white); line-height: 1;
+  transition: color .4s;
+}
+.nav-brand-tag {
+  font-family: var(--sans);
+  font-size: 9px; font-weight: 400;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: rgba(253,250,245,.6);
+  transition: color .4s;
+}
+nav.scrolled .nav-brand-name { color: var(--dark); }
+nav.scrolled .nav-brand-tag  { color: var(--bark-4); }
+.nav-links {
+  display: flex; gap: 36px; list-style: none; align-items: center;
+}
+.nav-links a {
+  font-size: 13px; font-weight: 400; letter-spacing: .06em;
+  color: var(--bark-2);
+  transition: color .25s;
+}
+.nav-links a:hover { color: var(--dark); }
+.nav-book {
+  font-size: 12px !important; font-weight: 500 !important;
+  letter-spacing: .12em !important; text-transform: uppercase !important;
+  color: var(--white) !important;
+  background: var(--gold) !important;
+  padding: 11px 26px !important;
+  transition: background .25s !important;
+}
+.nav-book:hover { background: var(--gold-2) !important; }
+
+/* ── HERO — full-bleed lifestyle ── */
+.hero {
+  position: relative;
+  height: 100vh; min-height: 680px;
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(135deg, #2A1F12 0%, #3D2E1A 35%, #5A4530 60%, #7A6048 100%);
+}
+/* Placeholder lifestyle image via unsplash */
+.hero-bg img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  opacity: .85;
+}
+.hero-vignette {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to top,  rgba(20,14,6,.82) 0%, rgba(20,14,6,.2) 45%, transparent 70%),
+    linear-gradient(to right, rgba(20,14,6,.35) 0%, transparent 55%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; padding: 0 60px 72px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: end; gap: 40px;
+}
+.hero-text {}
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 10px; font-weight: 400;
+  letter-spacing: .32em; text-transform: uppercase;
+  color: var(--gold-lt); margin-bottom: 20px;
+}
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(52px,5.8vw,88px);
+  font-weight: 400; line-height: 1.05;
+  letter-spacing: -.01em; color: var(--white);
+  margin-bottom: 24px;
+}
+.hero-h1 em { font-style: italic; color: var(--gold-lt); }
+.hero-sub {
+  font-size: 16px; font-weight: 400;
+  color: rgba(253,250,245,.65);
+  line-height: 1.8; max-width: 400px; margin-bottom: 40px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-gold {
+  display: inline-block;
+  background: var(--gold); color: var(--dark);
+  padding: 15px 36px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  border: 1px solid var(--gold);
+  transition: background .25s, transform .2s;
+}
+.btn-gold:hover { background: var(--gold-lt); transform: translateY(-1px); }
+.btn-ghost-light {
+  display: inline-block;
+  background: transparent; color: rgba(253,250,245,.85);
+  padding: 14px 36px;
+  font-size: 12px; font-weight: 400;
+  letter-spacing: .12em; text-transform: uppercase;
+  border: 1px solid rgba(253,250,245,.3);
+  transition: border-color .25s, color .25s;
+}
+.btn-ghost-light:hover { border-color: rgba(253,250,245,.7); color: var(--white); }
+
+/* Hero right: floating product card */
+.hero-card {
+  margin-left: auto;
+  background: rgba(247,242,234,.1);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(212,180,131,.25);
+  padding: 36px 40px;
+  max-width: 320px;
+}
+.hero-card-label {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--gold-lt); margin-bottom: 10px;
+}
+.hero-card-name {
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 400;
+  color: var(--white); margin-bottom: 4px; line-height: 1.1;
+}
+.hero-card-sub {
+  font-size: 12px; font-weight: 400;
+  color: rgba(253,250,245,.45);
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 22px; padding-bottom: 22px;
+  border-bottom: 1px solid rgba(212,180,131,.2);
+}
+.hero-card-stats {
+  display: flex; gap: 24px;
+}
+.hcs-num {
+  font-family: var(--serif);
+  font-size: 30px; font-weight: 400;
+  color: var(--white); line-height: 1;
+}
+.hcs-label {
+  font-size: 11px; font-weight: 400;
+  color: rgba(253,250,245,.4); margin-top: 3px;
+}
+.hero-card-cta {
+  display: block; margin-top: 26px;
+  padding: 12px; text-align: center;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold-lt);
+  border: 1px solid rgba(212,180,131,.3);
+  transition: background .25s, color .25s;
+}
+.hero-card-cta:hover {
+  background: var(--gold); color: var(--dark);
+  border-color: var(--gold);
+}
+
+/* ── BRAND BAR ── */
+.brand-bar {
+  background: var(--white);
+  display: grid; grid-template-columns: repeat(4,1fr);
+}
+.bb-item {
+  padding: 32px 28px;
+  border-right: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.bb-item:last-child { border-right: none; }
+.bb-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-bd);
+  display: flex; align-items: center; justify-content: center;
+}
+.bb-icon svg { width: 16px; height: 16px; }
+.bb-title {
+  font-size: 13px; font-weight: 600;
+  color: var(--bark); margin-bottom: 3px;
+}
+.bb-desc {
+  font-size: 12px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.5;
+}
+
+/* ── STATEMENT ── */
+.statement {
+  background: var(--cream);
+  padding: 120px 60px;
+  text-align: center;
+}
+.statement-inner { max-width: 820px; margin: 0 auto; }
+.st-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 28px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+}
+.st-eyebrow::before, .st-eyebrow::after {
+  content: ''; width: 40px; height: 1px; background: var(--gold-bd);
+}
+.st-headline {
+  font-family: var(--serif);
+  font-size: clamp(36px,4vw,58px); font-weight: 400;
+  line-height: 1.18; color: var(--bark);
+  margin-bottom: 28px; letter-spacing: -.01em;
+}
+.st-headline em { font-style: italic; color: var(--gold-2); }
+.st-body {
+  font-size: 17px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.85;
+  max-width: 580px; margin: 0 auto;
+}
+
+/* ── LIFESTYLE GALLERY ── */
+.gallery { background: var(--cream-2); padding: 0 60px 80px; }
+.gallery-header {
+  padding: 80px 0 48px;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+.gallery-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.gallery-headline {
+  font-family: var(--serif);
+  font-size: clamp(34px,3.5vw,50px); font-weight: 400;
+  color: var(--bark); line-height: 1.1; letter-spacing: -.01em;
+}
+.gallery-headline em { font-style: italic; }
+.gallery-note {
+  font-size: 14px; font-weight: 400;
+  color: var(--bark-3); max-width: 280px;
+  line-height: 1.7; text-align: right;
+}
+
+/* Mosaic grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-rows: 340px 280px;
+  gap: 10px;
+}
+.g-cell {
+  position: relative; overflow: hidden;
+  background: var(--cream-3);
+}
+.g-cell:nth-child(1) { grid-row: 1 / 3; }
+.g-cell img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.16,1,.3,1);
+}
+.g-cell:hover img { transform: scale(1.04); }
+.g-cell-label {
+  position: absolute; bottom: 18px; left: 18px;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(253,250,245,.7);
+  background: rgba(20,14,6,.3);
+  backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border: 1px solid rgba(253,250,245,.15);
+}
+
+/* Placeholder gradient fills */
+.g-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.gp-1 { background: linear-gradient(150deg,#C4B090 0%,#A08060 50%,#7A5A40 100%); }
+.gp-2 { background: linear-gradient(135deg,#D9C9AC 0%,#C0A880 60%,#A08860 100%); }
+.gp-3 { background: linear-gradient(160deg,#E4D8C0 0%,#C8B490 50%,#B09070 100%); }
+.gp-4 { background: linear-gradient(145deg,#CBBFA8 0%,#B09878 50%,#907858 100%); }
+.gp-5 { background: linear-gradient(155deg,#D4C4A4 0%,#BCA880 50%,#A08A60 100%); }
+
+/* ── A DAY WITH CERAGEM — autoplay slideshow ── */
+.day-section {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+/* All bg slides stacked, full cover */
+.day-bg-slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(.4,0,.2,1);
+  z-index: 0;
+}
+.day-bg-slide.active { opacity: 1; }
+.day-bg-morning {
+  background: linear-gradient(145deg,
+    #F0E0C4 0%, #E2C898 35%, #D4B272 65%, #C8A45C 100%);
+}
+.day-bg-morning::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 65% 25%,
+    rgba(255,215,110,.45) 0%, transparent 55%);
+}
+.day-bg-afternoon {
+  background: linear-gradient(145deg,
+    #6A4C28 0%, #4E3418 35%, #341E08 65%, #221404 100%);
+}
+.day-bg-afternoon::after {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 55% 18%,
+    rgba(190,120,30,.3) 0%, transparent 50%);
+}
+.day-bg-evening {
+  background: linear-gradient(150deg,
+    #180C04 0%, #281404 20%,
+    #401C06 38%, #58240A 55%,
+    #6E2E0C 70%, #50200A 100%);
+}
+.day-bg-evening::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 25% 70%, rgba(150,60,8,.5) 0%, transparent 45%),
+    radial-gradient(ellipse at 68% 32%, rgba(190,100,16,.18) 0%, transparent 40%);
+}
+.day-bg-vignette {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,.3) 0%, rgba(0,0,0,.05) 20%,
+    rgba(0,0,0,.05) 80%, rgba(0,0,0,.45) 100%);
+  pointer-events: none;
+}
+/* Content layer */
+.day-content {
+  position: absolute; inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 60px 100px;
+}
+/* Slide cards — all stacked, fade in/out */
+.day-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 60px 120px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .7s cubic-bezier(.4,0,.2,1),
+              transform .7s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+.day-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.day-card-inner {
+  max-width: 560px; width: 100%;
+  background: rgba(8,4,1,.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212,180,131,.22);
+  border-top: 2px solid var(--gold);
+  padding: 52px 52px 48px;
+  position: relative;
+}
+.day-step-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold-lt); margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.day-step-eyebrow::after {
+  content: ''; flex: 1; height: 1px;
+  background: rgba(212,180,131,.22);
+}
+.day-step-time {
+  font-family: var(--serif);
+  font-size: clamp(36px,4.2vw,60px); font-weight: 400;
+  color: var(--white); line-height: 1.05;
+  letter-spacing: -.01em; margin-bottom: 8px;
+}
+.day-step-time em { font-style: italic; color: var(--gold-lt); }
+.day-step-subtitle {
+  font-family: var(--serif); font-style: italic;
+  font-size: 17px; color: rgba(212,180,131,.7);
+  margin-bottom: 22px;
+}
+.day-step-desc {
+  font-size: 15px; font-weight: 400;
+  color: rgba(253,250,245,.75); line-height: 1.8;
+  margin-bottom: 32px;
+}
+.day-step-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 9px 16px;
+  border: 1px solid rgba(212,180,131,.25);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--gold-lt);
+}
+.day-step-tag svg { width: 15px; height: 15px; }
+/* Bottom controls */
+.day-controls {
+  position: absolute;
+  bottom: 44px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex; align-items: center; gap: 20px;
+}
+.day-dots {
+  display: flex; gap: 10px; align-items: center;
+}
+.day-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(212,180,131,.3);
+  cursor: pointer;
+  transition: background .4s, transform .4s;
+  border: none; padding: 0;
+}
+.day-dot.active {
+  background: var(--gold-lt);
+  transform: scale(1.6);
+}
+/* Progress bar */
+.day-progress-bar {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 2px;
+  background: var(--gold);
+  width: 0%;
+  transition: width linear;
+  z-index: 3;
+}
+/* Prev/next arrows */
+.day-arrow {
+  width: 40px; height: 40px;
+  border: 1px solid rgba(212,180,131,.25);
+  background: rgba(8,4,1,.5);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: border-color .25s, background .25s;
+  color: var(--gold-lt);
+}
+.day-arrow:hover {
+  border-color: var(--gold);
+  background: rgba(184,148,96,.15);
+}
+.day-arrow svg { width: 16px; height: 16px; }
+/* Time label top center */
+.day-time-label {
+  position: absolute;
+  top: 36px; left: 50%; transform: translateX(-50%);
+  z-index: 3;
+  font-family: var(--serif); font-style: italic;
+  font-size: 13px; letter-spacing: .1em;
+  color: rgba(253,250,245,.4);
+  white-space: nowrap; pointer-events: none;
+  transition: opacity .5s;
+}
+
+/* ── COLLECTION ── */
+.collection {
+  background: var(--white);
+  padding: 120px 60px;
+}
+.collection-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 60px; gap: 40px;
+}
+.collection-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.collection-headline {
+  font-family: var(--serif);
+  font-size: clamp(36px,3.8vw,54px); font-weight: 400;
+  color: var(--bark); line-height: 1.1; letter-spacing: -.01em;
+}
+.collection-headline em { font-style: italic; }
+.collection-sub {
+  font-size: 15px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.75;
+  max-width: 340px; text-align: right;
+}
+
+.product-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.product-card {
+  background: var(--cream);
+  border: 1px solid var(--border-2);
+  overflow: hidden; cursor: pointer;
+  transition: transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 64px rgba(58,46,30,.1);
+}
+.product-img {
+  aspect-ratio: 4/5;
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.product-img-bg {
+  position: absolute; inset: 0;
+}
+.pi-1 { background: linear-gradient(150deg,#E4D8C4 0%,#D0BEA0 60%,#BCA880 100%); }
+.pi-2 { background: linear-gradient(150deg,#D8CCBA 0%,#C4B094 60%,#B09878 100%); }
+.pi-3 { background: linear-gradient(150deg,#CEBFAA 0%,#BCA888 60%,#A89068 100%); }
+.product-tag {
+  position: absolute; top: 20px; left: 20px; z-index: 2;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold-2);
+  background: var(--white);
+  padding: 5px 12px;
+  border: 1px solid var(--gold-bd);
+}
+.product-chair-art {
+  position: relative; z-index: 1;
+  width: 100px; height: 160px;
+  background: linear-gradient(170deg, rgba(255,255,255,.6) 0%, rgba(255,255,255,.2) 100%);
+  border-radius: 50px 50px 8px 8px;
+  box-shadow: 0 20px 60px rgba(58,46,30,.15);
+}
+.product-chair-art::after {
+  content: '';
+  position: absolute; bottom: -10px; left: 50%;
+  transform: translateX(-50%);
+  width: 55%; height: 12px;
+  background: rgba(58,46,30,.15);
+  border-radius: 4px;
+}
+.product-img-lbl {
+  position: absolute; bottom: 16px; right: 16px; z-index: 2;
+  font-size: 9px; font-weight: 400;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--bark-4);
+}
+.product-body { padding: 32px 32px 36px; }
+.product-series {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 10px; display: block;
+}
+.product-name {
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 400;
+  color: var(--bark); margin-bottom: 18px; line-height: 1.15;
+}
+.product-features {
+  list-style: none; margin-bottom: 24px;
+}
+.product-features li {
+  font-size: 13px; font-weight: 400;
+  color: var(--bark-3);
+  padding: 9px 0; border-bottom: 1px solid var(--border-2);
+  display: flex; gap: 12px; align-items: center;
+}
+.product-features li::before {
+  content: ''; width: 4px; height: 4px;
+  background: var(--gold); border-radius: 50%; flex-shrink: 0;
+}
+.product-footer {
+  display: flex; justify-content: space-between;
+  align-items: baseline; padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+.product-price {
+  font-family: var(--serif);
+  font-size: 28px; font-weight: 400;
+  color: var(--bark); letter-spacing: -.01em;
+}
+.product-mo {
+  font-size: 12px; font-weight: 400;
+  color: var(--bark-4); text-align: right;
+}
+.product-mo strong {
+  display: block; color: var(--gold);
+  font-weight: 500; font-size: 13px;
+}
+.product-cta {
+  display: block; padding: 13px; text-align: center;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--bark);
+  border: 1px solid var(--border);
+  transition: background .25s, color .25s, border-color .25s;
+}
+.product-cta:hover {
+  background: var(--gold); color: var(--white);
+  border-color: var(--gold);
+}
+
+/* ── MATERIAL & CRAFT ── */
+.craft {
+  background: var(--cream-2);
+  padding: 0;
+}
+.craft-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+.craft-visual {
+  position: relative; overflow: hidden; min-height: 500px;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(145deg,#C8B494 0%,#A89070 40%,#8A7050 80%,#6A5030 100%);
+}
+.craft-visual img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; opacity: .9;
+}
+.craft-visual-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 60%, var(--cream-2) 100%);
+}
+.craft-visual-caption {
+  position: absolute; bottom: 28px; left: 28px; z-index: 2;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: rgba(253,250,245,.5);
+}
+.craft-content {
+  padding: 100px 80px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.craft-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 18px;
+}
+.craft-headline {
+  font-family: var(--serif);
+  font-size: clamp(34px,3.5vw,50px); font-weight: 400;
+  color: var(--bark); line-height: 1.12;
+  letter-spacing: -.01em; margin-bottom: 28px;
+}
+.craft-headline em { font-style: italic; }
+.craft-body {
+  font-size: 15px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.8;
+  margin-bottom: 48px; max-width: 400px;
+}
+.craft-materials {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.craft-mat {
+  padding: 22px 20px;
+  background: var(--white);
+  border: 1px solid var(--border-2);
+  transition: border-color .25s;
+}
+.craft-mat:hover { border-color: var(--gold-bd); }
+.craft-mat-icon {
+  width: 40px; height: 40px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-bd);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.craft-mat-icon svg { width: 18px; height: 18px; }
+.craft-mat-name {
+  font-family: var(--serif);
+  font-size: 15px; font-weight: 400;
+  color: var(--bark); margin-bottom: 4px;
+}
+.craft-mat-desc {
+  font-size: 12px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.55;
+}
+
+/* ── CERT BAND ── */
+.cert-band {
+  background: var(--bark);
+  padding: 72px 60px;
+}
+.cert-band-inner {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px; background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.cert-item {
+  background: var(--bark);
+  padding: 48px 44px;
+  transition: background .3s;
+}
+.cert-item:hover { background: var(--bark-2); }
+.cert-num {
+  font-family: var(--serif);
+  font-size: 48px; font-weight: 400;
+  color: var(--gold-lt); line-height: 1;
+  margin-bottom: 16px; opacity: .7;
+}
+.cert-title {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 400;
+  color: var(--white); margin-bottom: 12px; line-height: 1.25;
+}
+.cert-desc {
+  font-size: 14px; font-weight: 400;
+  color: rgba(253,250,245,.5); line-height: 1.7;
+}
+.cert-badge {
+  display: inline-block; margin-top: 16px;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--gold-lt);
+  border: 1px solid rgba(212,180,131,.25);
+  padding: 5px 12px;
+}
+
+/* ── EXPERIENCE / BOOKING ── */
+.experience {
+  background: var(--dark);
+  padding: 0;
+}
+.experience-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+}
+.exp-left {
+  padding: 100px 80px;
+  display: flex; flex-direction: column; justify-content: center;
+  border-right: 1px solid rgba(255,255,255,.06);
+  position: relative; overflow: hidden;
+}
+.exp-left::after {
+  content: '';
+  position: absolute; top: -120px; left: -120px;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle,rgba(184,148,96,.1) 0%,transparent 70%);
+  pointer-events: none;
+}
+.exp-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold-lt); margin-bottom: 22px;
+}
+.exp-headline {
+  font-family: var(--serif);
+  font-size: clamp(44px,4.8vw,70px); font-weight: 400;
+  color: var(--white); line-height: 1.05;
+  letter-spacing: -.01em; margin-bottom: 24px;
+}
+.exp-headline em { font-style: italic; color: var(--gold-lt); }
+.exp-body {
+  font-size: 16px; font-weight: 400;
+  color: rgba(253,250,245,.6); line-height: 1.8;
+  max-width: 380px; margin-bottom: 40px;
+}
+.exp-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 12px; margin-bottom: 48px;
+}
+.exp-list li {
+  font-size: 14px; font-weight: 400;
+  color: rgba(253,250,245,.75);
+  display: flex; align-items: center; gap: 14px;
+}
+.exp-list li::before {
+  content: '';
+  width: 18px; height: 18px; flex-shrink: 0;
+  border: 1px solid rgba(184,148,96,.35);
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%23B89460' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center;
+}
+.exp-right {
+  background: rgba(0,0,0,.2);
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 72px;
+}
+.booking-form { width: 100%; max-width: 380px; }
+.form-title {
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 400;
+  color: var(--white); margin-bottom: 6px;
+}
+.form-sub {
+  font-size: 13px; font-weight: 400;
+  color: rgba(253,250,245,.4); margin-bottom: 32px;
+}
+.form-row { margin-bottom: 14px; }
+.form-label {
+  display: block;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: rgba(253,250,245,.3); margin-bottom: 7px;
+}
+.form-input {
+  width: 100%;
+  background: rgba(253,250,245,.05);
+  border: 1px solid rgba(253,250,245,.1);
+  color: var(--white);
+  padding: 14px 16px;
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 400;
+  outline: none; appearance: none; -webkit-appearance: none;
+  transition: border-color .25s;
+}
+.form-input:focus { border-color: var(--gold); }
+.form-input::placeholder { color: rgba(253,250,245,.2); }
+.form-input option { background: var(--dark); }
+.form-submit {
+  width: 100%;
+  background: var(--gold); color: var(--dark);
+  border: none; padding: 17px;
+  font-family: var(--sans);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase;
+  cursor: pointer; margin-top: 6px;
+  transition: background .25s;
+}
+.form-submit:hover { background: var(--gold-lt); }
+.form-note {
+  text-align: center;
+  font-size: 11px; font-weight: 400;
+  color: rgba(253,250,245,.25);
+  margin-top: 14px; line-height: 1.5;
+}
+
+/* ── FINANCING ── */
+.financing { background: var(--cream); padding: 120px 60px; }
+.financing-layout {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 100px; align-items: center;
+}
+.fin-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.fin-headline {
+  font-family: var(--serif);
+  font-size: clamp(36px,3.8vw,54px); font-weight: 400;
+  color: var(--bark); line-height: 1.1;
+  letter-spacing: -.01em; margin-bottom: 20px;
+}
+.fin-headline em { font-style: italic; }
+.fin-body {
+  font-size: 15px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.8;
+  margin-bottom: 44px; max-width: 400px;
+}
+.fin-steps { display: flex; flex-direction: column; }
+.fin-step {
+  display: flex; gap: 24px; align-items: flex-start;
+  padding: 24px 0; border-bottom: 1px solid var(--border-2);
+}
+.fin-step:first-child { border-top: 1px solid var(--border-2); }
+.fin-step-n {
+  font-family: var(--serif);
+  font-size: 40px; font-weight: 400;
+  color: var(--cream-4); line-height: 1; min-width: 48px;
+}
+.fin-step-title {
+  font-size: 15px; font-weight: 600;
+  color: var(--bark); margin-bottom: 4px;
+}
+.fin-step-desc {
+  font-size: 13px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.65;
+}
+.fin-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 52px;
+}
+.fin-nums {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 32px; padding-bottom: 32px; margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.fin-lbl {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--bark-4); margin-bottom: 10px;
+}
+.fin-val {
+  font-family: var(--serif);
+  font-size: 48px; font-weight: 400;
+  color: var(--bark); line-height: 1; letter-spacing: -.01em;
+}
+.fin-val small { font-size: 22px; color: var(--bark-3); }
+.fin-val.accent { color: var(--gold-2); }
+.klarna-row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 20px;
+  background: var(--cream); border: 1px solid var(--border);
+  margin-bottom: 18px;
+}
+.klarna-name {
+  font-family: var(--serif);
+  font-size: 22px; font-weight: 400; color: var(--bark);
+}
+.klarna-desc { font-size: 12px; font-weight: 400; color: var(--bark-3); }
+.fin-disc {
+  font-size: 11px; font-weight: 400;
+  color: var(--bark-4); line-height: 1.65;
+  padding-top: 16px; border-top: 1px solid var(--border-2);
+}
+
+/* ── SHOWROOM ── */
+.showroom { background: var(--white); padding: 0; }
+.showroom-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.showroom-visual {
+  background: var(--cream-2);
+  min-height: 520px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.showroom-visual img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; opacity: .8;
+}
+.showroom-map-mock {
+  position: relative; z-index: 2;
+  background: rgba(247,242,234,.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--gold-bd);
+  padding: 32px 36px;
+  min-width: 240px;
+}
+.map-pin-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.map-pin-dot {
+  width: 12px; height: 12px;
+  background: var(--gold); border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(184,148,96,.25);
+  flex-shrink: 0;
+}
+.map-pin-name {
+  font-family: var(--serif);
+  font-size: 15px; font-weight: 400; color: var(--bark);
+}
+.map-detail {
+  font-size: 12px; font-weight: 400;
+  color: var(--bark-3); line-height: 1.6;
+  padding-top: 14px; border-top: 1px solid var(--border);
+}
+.showroom-info {
+  padding: 80px 72px;
+  display: flex; flex-direction: column; justify-content: center;
+  border-left: 1px solid var(--border);
+}
+.showroom-eyebrow {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.showroom-headline {
+  font-family: var(--serif);
+  font-size: clamp(32px,3.2vw,46px); font-weight: 400;
+  color: var(--bark); line-height: 1.12;
+  letter-spacing: -.01em; margin-bottom: 36px;
+}
+.showroom-headline em { font-style: italic; }
+.info-block { margin-bottom: 28px; }
+.info-lbl {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: var(--bark-4); margin-bottom: 8px;
+}
+.info-val {
+  font-size: 16px; font-weight: 400;
+  color: var(--bark); line-height: 1.6;
+}
+.hours-grid {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 6px 24px; margin-top: 10px;
+}
+.h-day { font-size: 13px; font-weight: 400; color: var(--bark-3); }
+.h-time { font-size: 13px; font-weight: 400; color: var(--bark); }
+.btn-primary {
+  display: inline-block;
+  background: var(--gold); color: var(--white);
+  padding: 15px 36px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  border: 1px solid var(--gold);
+  transition: background .25s, transform .2s;
+  margin-top: 8px;
+}
+.btn-primary:hover { background: var(--gold-2); transform: translateY(-1px); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark);
+  padding: 80px 60px 44px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 60px; padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  margin-bottom: 36px;
+}
+.footer-brand-name {
+  font-family: var(--serif);
+  font-size: 20px; font-weight: 400;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 5px; line-height: 1;
+}
+.footer-brand-tag {
+  font-size: 9px; font-weight: 400;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: rgba(253,250,245,.3); margin-bottom: 18px;
+}
+.footer-desc {
+  font-size: 13px; font-weight: 400;
+  color: rgba(253,250,245,.45); line-height: 1.75;
+  max-width: 260px; margin-bottom: 28px;
+}
+.social-row { display: flex; gap: 8px; }
+.social-btn {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(255,255,255,.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.35); font-size: 12px; font-weight: 500;
+  font-family: var(--sans);
+  transition: border-color .25s, color .25s;
+}
+.social-btn:hover { border-color: var(--gold); color: var(--gold); }
+.footer-col-title {
+  font-size: 9px; font-weight: 500;
+  letter-spacing: .26em; text-transform: uppercase;
+  color: rgba(253,250,245,.28); margin-bottom: 20px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-links a {
+  font-size: 13px; font-weight: 400;
+  color: rgba(253,250,245,.5);
+  transition: color .25s;
+}
+.footer-links a:hover { color: var(--gold-lt); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; font-weight: 400;
+  color: rgba(253,250,245,.2);
+}
+.footer-kr { color: rgba(253,250,245,.28); }
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── HERO ENTRANCE ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-eyebrow { animation: fadeUp .9s .1s  both; }
+.hero-h1      { animation: fadeUp .9s .25s both; }
+.hero-sub     { animation: fadeUp .9s .4s  both; }
+.hero-btns    { animation: fadeUp .9s .52s both; }
+.hero-card    { animation: fadeUp .9s .38s both; }
+
+/* ── HAMBURGER ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px;
+  background: none; border: none;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--white);
+  transition: transform .3s, opacity .3s, background .4s;
+}
+nav.scrolled .nav-hamburger span { background: var(--dark); }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile drawer */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  pointer-events: none;
+}
+.nav-mobile.open { pointer-events: auto; }
+.nav-mobile-overlay {
+  position: absolute; inset: 0;
+  background: rgba(20,14,6,.5);
+  backdrop-filter: blur(4px);
+  opacity: 0; transition: opacity .35s;
+}
+.nav-mobile.open .nav-mobile-overlay { opacity: 1; }
+.nav-mobile-drawer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: min(320px, 85vw);
+  background: var(--cream);
+  padding: 80px 36px 48px;
+  transform: translateX(100%);
+  transition: transform .4s cubic-bezier(.16,1,.3,1);
+  display: flex; flex-direction: column; gap: 0;
+  overflow-y: auto;
+}
+.nav-mobile.open .nav-mobile-drawer { transform: translateX(0); }
+.nav-mobile-link {
+  display: block;
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 400;
+  color: var(--bark);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-2);
+  text-decoration: none;
+  letter-spacing: -.01em;
+  transition: color .25s;
+}
+.nav-mobile-link:hover { color: var(--gold); }
+.nav-mobile-link:last-of-type { border-bottom: none; }
+.nav-mobile-cta {
+  margin-top: 32px;
+  display: block;
+  background: var(--gold); color: var(--white);
+  padding: 16px; text-align: center;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  text-decoration: none;
+  transition: background .25s;
+}
+.nav-mobile-cta:hover { background: var(--gold-2); }
+.nav-mobile-close {
+  position: absolute; top: 20px; right: 20px;
+  background: none; border: none; cursor: pointer;
+  font-size: 20px; color: var(--bark-3); line-height: 1;
+  padding: 10px;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 980px) {
+  nav { padding: 18px 24px; }
+  nav.scrolled { padding: 14px 24px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile { display: block; }
+
+  /* Hero mobile: text top, image space middle, card bottom */
+  .hero { align-items: flex-start; }
+  .hero-content {
+    grid-template-columns: 1fr;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hero-text {
+    padding: 100px 24px 0;
+  }
+  .hero-h1 { font-size: clamp(40px, 10vw, 56px); }
+  .hero-sub { display: none; }
+  .hero-btns { margin-bottom: 0; }
+  .hero-card {
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+    background: rgba(247,242,234,.92);
+    backdrop-filter: blur(16px);
+    border: none;
+    border-top: 1px solid rgba(212,180,131,.3);
+    padding: 24px 24px 32px;
+  }
+  .hero-card-name { font-size: 20px; color: var(--bark); }
+  .hero-card-sub { color: var(--bark-4); }
+  .hero-card-stats { gap: 20px; }
+  .hcs-num { font-size: 24px; color: var(--bark); }
+  .hcs-label { color: var(--bark-4); }
+  .hero-card-cta {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    font-weight: 600;
+  }
+}
+
+/* ── MOBILE ONLY (≤480px) — hero card full bleed ── */
+@media (max-width: 480px) {
+  .hero-content { padding: 0; }
+  .hero-text { padding: 88px 20px 0; }
+  .hero-card {
+    width: 100vw;
+    position: relative;
+    left: 0;
+    padding: 22px 20px 36px;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .brand-bar { grid-template-columns: 1fr 1fr; }
+  .bb-item:nth-child(2) { border-right: none; }
+  .bb-item:nth-child(3) { border-right: 1px solid var(--border); }
+
+  .statement { padding: 80px 24px; }
+
+  .gallery { padding: 0 24px 60px; }
+  .gallery-header { flex-direction: column; align-items: flex-start; padding: 60px 0 36px; gap: 16px; }
+  .gallery-note { text-align: left; max-width: 100%; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .g-cell:nth-child(1) { grid-row: auto; grid-column: 1 / -1; height: 280px; }
+  .g-cell:nth-child(n+2) { height: 200px; }
+
+  .day-step { padding: 60px 24px; min-height: 100svh; }
+  .day-card-inner { padding: 36px 28px; }
+  .day-progress { right: 16px; }
+
+  .collection { padding: 80px 24px; }
+  .collection-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .collection-sub { text-align: left; max-width: 100%; }
+  .product-grid { grid-template-columns: 1fr; }
+
+  .craft-inner { grid-template-columns: 1fr; }
+  .craft-content { padding: 60px 24px; }
+  .craft-visual { min-height: 300px; }
+
+  .cert-band { padding: 60px 24px; }
+  .cert-band-inner { grid-template-columns: 1fr; }
+
+  .experience-inner { grid-template-columns: 1fr; }
+  .exp-left { padding: 60px 24px 48px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .exp-right { padding: 48px 24px; }
+
+  .financing { padding: 80px 24px; }
+  .financing-layout { grid-template-columns: 1fr; gap: 48px; }
+  .fin-panel { padding: 36px 24px; }
+
+  .showroom-inner { grid-template-columns: 1fr; }
+  .showroom-info { padding: 56px 24px; border-left: none; border-top: 1px solid var(--border); }
+
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#top" class="nav-brand">
+    <span class="nav-brand-name">Ceragem</span>
+    <span class="nav-brand-tag">Wellness &amp; Lifestyle · Vancouver</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#craft">Technology</a></li>
+    <li><a href="#financing">Financing</a></li>
+    <li><a href="#showroom">Showroom</a></li>
+    <li><a href="#booking" class="nav-book">Book a Consultation</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-mobile" id="navMobile">
+  <div class="nav-mobile-overlay" id="navOverlay"></div>
+  <div class="nav-mobile-drawer">
+    <button class="nav-mobile-close" id="navClose" aria-label="Close menu">✕</button>
+    <a href="#collection" class="nav-mobile-link">Collection</a>
+    <a href="#craft"      class="nav-mobile-link">Technology</a>
+    <a href="#financing"  class="nav-mobile-link">Financing</a>
+    <a href="#showroom"   class="nav-mobile-link">Showroom</a>
+    <a href="#booking"    class="nav-mobile-cta">Book a Consultation</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img
+      src="/images/hero-lifestyle.png"
+      alt="Luxury living room interior"
+      loading="eager"
+    >
+  </div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Designed for Modern Living · Vancouver BC</p>
+      <h1 class="hero-h1">
+        Wellness,<br>
+        <em>Beautifully</em><br>
+        Integrated.
+      </h1>
+      <p class="hero-sub">
+        Ceragem brings advanced wellness technology into your home with timeless design and unparalleled comfort.
+      </p>
+      <div class="hero-btns">
+        <a href="#collection" class="btn-gold">Explore Collection</a>
+        <a href="#booking"    class="btn-ghost-light">Book a Private Experience</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <p class="hero-card-label">New</p>
+      <h3 class="hero-card-name">Ceragem M4</h3>
+      <p class="hero-card-sub">Therapeutic Massage Chair · by Ceragem</p>
+      <div class="hero-card-stats">
+        <div>
+          <div class="hcs-num">30+</div>
+          <div class="hcs-label">Yrs of R&amp;D</div>
+        </div>
+        <div>
+          <div class="hcs-num">60+</div>
+          <div class="hcs-label">Countries</div>
+        </div>
+        <div>
+          <div class="hcs-num">KR</div>
+          <div class="hcs-label">Certified</div>
+        </div>
+      </div>
+      <a href="#collection" class="hero-card-cta">Discover Collection →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BRAND BAR ── -->
+<div class="brand-bar">
+  <div class="bb-item">
+    <div class="bb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.4"><path d="M12 3c0 0-6 5-6 9.5C6 15.538 8.686 18 12 18s6-2.462 6-5.5C18 8 12 3 12 3Z"/></svg>
+    </div>
+    <div>
+      <div class="bb-title">Premium Wellness</div>
+      <div class="bb-desc">Advanced technology for total body care</div>
+    </div>
+  </div>
+  <div class="bb-item">
+    <div class="bb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
+    </div>
+    <div>
+      <div class="bb-title">Designed for Your Home</div>
+      <div class="bb-desc">Elegant design that elevates any living space</div>
+    </div>
+  </div>
+  <div class="bb-item">
+    <div class="bb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    </div>
+    <div>
+      <div class="bb-title">Better Living</div>
+      <div class="bb-desc">Enhance your daily life with health and balance</div>
+    </div>
+  </div>
+  <div class="bb-item">
+    <div class="bb-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.4"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </div>
+    <div>
+      <div class="bb-title">Trusted Worldwide</div>
+      <div class="bb-desc">Loved by millions for over two decades</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── BRAND STATEMENT ── -->
+<section class="statement reveal" id="about">
+  <div class="statement-inner">
+    <p class="st-eyebrow">Our Philosophy</p>
+    <h2 class="st-headline">
+      It's not a machine in the corner.<br>
+      It becomes part of <em>how your home feels.</em>
+    </h2>
+    <p class="st-body">
+      Ceragem was built on a simple belief: the most sophisticated wellness technology should live beautifully alongside the things you love. Three decades of Korean medical research, distilled into a piece your home deserves.
+    </p>
+  </div>
+</section>
+
+<!-- ── LIFESTYLE GALLERY ── -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header reveal">
+    <div>
+      <p class="gallery-eyebrow">Ceragem at Home</p>
+      <h2 class="gallery-headline">Where Wellness<br><em>Lives</em></h2>
+    </div>
+    <p class="gallery-note">Every space is different. Ceragem is designed to belong in yours — naturally.</p>
+  </div>
+
+  <div class="gallery-grid reveal">
+    <div class="g-cell">
+      <img src="/images/gallery-living-room.webp" alt="Ceragem in living room" loading="lazy">
+      <span class="g-cell-label">Living Room</span>
+    </div>
+    <div class="g-cell">
+      <img src="/images/gallery-bedroom.webp" alt="Ceragem in bedroom" loading="lazy">
+      <span class="g-cell-label">Bedroom Retreat</span>
+    </div>
+    <div class="g-cell">
+      <img src="/images/gallery-wellness-corner.webp" alt="Ceragem wellness corner" loading="lazy">
+      <span class="g-cell-label">Wellness Corner</span>
+    </div>
+    <div class="g-cell">
+      <img src="/images/gallery-home-office.webp" alt="Ceragem in home office" loading="lazy">
+      <span class="g-cell-label">Home Office</span>
+    </div>
+    <div class="g-cell">
+      <img src="/images/gallery-lounge.png" alt="Ceragem lounge space" loading="lazy">
+      <span class="g-cell-label">Lounge Space</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── A DAY WITH CERAGEM — sticky scroll ── -->
+<!-- Fixed background (shown only when day section is in viewport) -->
+<!-- ── A DAY WITH CERAGEM — autoplay slideshow ── -->
+<div class="day-section" id="lifestyle">
+
+  <!-- Backgrounds -->
+  <div class="day-bg-slide day-bg-morning active" id="bgMorning"></div>
+  <div class="day-bg-slide day-bg-afternoon"      id="bgAfternoon"></div>
+  <div class="day-bg-slide day-bg-evening"        id="bgEvening"></div>
+  <div class="day-bg-vignette"></div>
+
+  <!-- Time label -->
+  <div class="day-time-label" id="dayTimeLabel">7:00 AM — Morning</div>
+
+  <!-- Slide 0: Morning -->
+  <div class="day-slide active" data-index="0" data-time="morning">
+    <div class="day-card-inner">
+      <p class="day-step-eyebrow">A Day With Ceragem</p>
+      <h2 class="day-step-time">7:00 <em>AM</em></h2>
+      <p class="day-step-subtitle">Begin before the day begins.</p>
+      <p class="day-step-desc">Fifteen minutes of gentle spinal therapy before the household wakes. Far-infrared heat loosens what sleep stiffened. You start the day ahead of it.</p>
+      <span class="day-step-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke-linecap="round"/></svg>
+        Far-Infrared Warmth
+      </span>
+    </div>
+  </div>
+
+  <!-- Slide 1: Afternoon -->
+  <div class="day-slide" data-index="1" data-time="afternoon">
+    <div class="day-card-inner">
+      <p class="day-step-eyebrow">A Day With Ceragem</p>
+      <h2 class="day-step-time">1:00 <em>PM</em></h2>
+      <p class="day-step-subtitle">The reset between focus and focus.</p>
+      <p class="day-step-desc">Remote work takes its toll on the spine. Twenty minutes of Ceragem's automatic body scan and spinal massage, and you return to your screen a different person.</p>
+      <span class="day-step-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3C12 3 6 8 6 13.5C6 16.538 8.686 19 12 19C15.314 19 18 16.538 18 13.5C18 8 12 3 12 3Z"/></svg>
+        Spinal Decompression
+      </span>
+    </div>
+  </div>
+
+  <!-- Slide 2: Evening -->
+  <div class="day-slide" data-index="2" data-time="evening">
+    <div class="day-card-inner">
+      <p class="day-step-eyebrow">A Day With Ceragem</p>
+      <h2 class="day-step-time">9:00 <em>PM</em></h2>
+      <p class="day-step-subtitle">The ritual that ends the day right.</p>
+      <p class="day-step-desc">The city quiets. Jade warmth moves along your spine as the day dissolves. This is the version of rest your body has been asking for all along.</p>
+      <span class="day-step-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        Jade Thermal Therapy
+      </span>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="day-controls">
+    <button class="day-arrow" id="dayPrev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="day-dots" id="dayDots">
+      <button class="day-dot active" data-index="0" aria-label="Morning"></button>
+      <button class="day-dot" data-index="1" aria-label="Afternoon"></button>
+      <button class="day-dot" data-index="2" aria-label="Evening"></button>
+    </div>
+    <button class="day-arrow" id="dayNext" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- Autoplay progress bar -->
+  <div class="day-progress-bar" id="dayProgressBar"></div>
+
+</div><!-- /day-section -->
+
+<!-- ── COLLECTION ── -->
+<section class="collection" id="collection">
+  <div class="collection-header reveal">
+    <div>
+      <p class="collection-eyebrow">The Collection</p>
+      <h2 class="collection-headline">Designed to<br><em>Live With You</em></h2>
+    </div>
+    <p class="collection-sub">Each model integrates seamlessly into your living space. Financing available from $[X]/month.</p>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card reveal">
+      <div class="product-img">
+        <img src="/images/product-m4.webp" alt="Ceragem M4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" onerror="this.style.opacity=0" onload="this.style.opacity=1">
+        <div class="product-img-bg pi-1"></div>
+        <span class="product-tag">Introductory</span>
+        <div class="product-chair-art"></div>
+        <span class="product-img-lbl">product-m4.webp</span>
+      </div>
+      <div class="product-body">
+        <span class="product-series">Massage Chair</span>
+        <h3 class="product-name">Ceragem M4</h3>
+        <ul class="product-features">
+          <li>THERMAL-Tech™ Heat up to 149°F Along Spine</li>
+          <li>Premium SL Frame — Near-Silent Operation</li>
+          <li>8 Automatic Massage Modes</li>
+          <li>145° Recline + Abdominal Massager</li>
+          <li>Bluetooth Speaker & OLED Remote</li>
+        </ul>
+        <div class="product-footer">
+          <div class="product-price">$6,000</div>
+          <div class="product-mo"><strong>From $[X]/mo</strong>Financing available</div>
+        </div>
+        <a href="#booking" class="product-cta">Experience in Showroom →</a>
+      </div>
+    </div>
+
+    <div class="product-card reveal" style="transition-delay:.12s">
+      <div class="product-img">
+        <img src="/images/product-v4.webp" alt="Ceragem V4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" onerror="this.style.opacity=0" onload="this.style.opacity=1">
+        <div class="product-img-bg pi-2"></div>
+        <span class="product-tag">Most Popular</span>
+        <div class="product-chair-art"></div>
+        <span class="product-img-lbl">product-v4.webp</span>
+      </div>
+      <div class="product-body">
+        <span class="product-series">Massage Bed</span>
+        <h3 class="product-name">Ceragem V4</h3>
+        <ul class="product-features">
+          <li>Patented Spinal Scanning Technology</li>
+          <li>17 Modes — 12 Auto + 5 Custom</li>
+          <li>3D Heated Rollers up to 149°F</li>
+          <li>Slide-Away Ottoman Conversion</li>
+          <li>FDA-Cleared Class II Medical Device</li>
+        </ul>
+        <div class="product-footer">
+          <div class="product-price">$9,800</div>
+          <div class="product-mo"><strong>From $[X]/mo</strong>Financing available</div>
+        </div>
+        <a href="#booking" class="product-cta">Experience in Showroom →</a>
+      </div>
+    </div>
+
+    <div class="product-card reveal" style="transition-delay:.24s">
+      <div class="product-img">
+        <img src="/images/product-m10.webp" alt="Ceragem M10" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" onerror="this.style.opacity=0" onload="this.style.opacity=1">
+        <div class="product-img-bg pi-3"></div>
+        <span class="product-tag">Flagship</span>
+        <div class="product-chair-art"></div>
+        <span class="product-img-lbl">product-m10.webp</span>
+      </div>
+      <div class="product-body">
+        <span class="product-series">Flagship Massage Chair</span>
+        <h3 class="product-name">Ceragem M10</h3>
+        <ul class="product-features">
+          <li>4D + 3D Dual Roller System</li>
+          <li>Smart Body Scan — 24 Auto Programs</li>
+          <li>Silent Dual Motors + Split-Zone Control</li>
+          <li>Flex Track + 150° Zero-Gravity Recline</li>
+          <li>8" Touchscreen + Premium Bluetooth Sound</li>
+        </ul>
+        <div class="product-footer">
+          <div class="product-price">$12,999</div>
+          <div class="product-mo"><strong>From $[X]/mo</strong>Financing available</div>
+        </div>
+        <a href="#booking" class="product-cta">Experience in Showroom →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MATERIAL & CRAFT ── -->
+<section class="craft" id="craft">
+  <div class="craft-inner">
+    <div class="craft-visual">
+      <img src="/images/craft-jade-material.webp" alt="Natural jade stone" loading="lazy">
+      <div class="craft-visual-overlay"></div>
+      <span class="craft-visual-caption">Material photography TBC</span>
+    </div>
+
+    <div class="craft-content reveal">
+      <p class="craft-eyebrow">Material &amp; Craft</p>
+      <h2 class="craft-headline">Built from the<br><em>Earth's finest.</em></h2>
+      <p class="craft-body">
+        Every Ceragem is constructed around natural materials chosen for their thermal properties and longevity — not aesthetics alone. This is why the experience is unlike anything else you've tried.
+      </p>
+      <div class="craft-materials">
+        <div class="craft-mat">
+          <div class="craft-mat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.3"><path d="M12 2L8 8H4l4 4-1.5 5.5L12 14l5.5 3.5L16 12l4-4h-4L12 2z"/></svg>
+          </div>
+          <div class="craft-mat-name">Natural Jade</div>
+          <div class="craft-mat-desc">Retains and emits far-infrared heat along the spinal column</div>
+        </div>
+        <div class="craft-mat">
+          <div class="craft-mat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.3"><path d="M12 3l2.5 5h5l-4 3.5 1.5 5.5L12 14l-5 3 1.5-5.5L4.5 8h5L12 3z"/></svg>
+          </div>
+          <div class="craft-mat-name">Tourmaline</div>
+          <div class="craft-mat-desc">Generates negative ions that enhance thermal therapy</div>
+        </div>
+        <div class="craft-mat">
+          <div class="craft-mat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.3"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
+          </div>
+          <div class="craft-mat-name">Far-Infrared</div>
+          <div class="craft-mat-desc">Penetrates 4–5cm below skin for deep tissue benefit</div>
+        </div>
+        <div class="craft-mat">
+          <div class="craft-mat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B89460" stroke-width="1.3"><path d="M12 3l2 5h5l-4 3 1.5 5L12 13l-4.5 3L9 11 5 8h5l2-5z"/><circle cx="12" cy="12" r="9" stroke-dasharray="2 2"/></svg>
+          </div>
+          <div class="craft-mat-name">MFDS Certified</div>
+          <div class="craft-mat-desc">Korean Ministry of Food &amp; Drug Safety — clinical grade</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERT BAND ── -->
+<section class="cert-band" id="technology">
+  <div class="cert-band-inner">
+    <div class="cert-item reveal">
+      <div class="cert-num">30+</div>
+      <h3 class="cert-title">Years of Medical Research</h3>
+      <p class="cert-desc">Three decades of clinical R&D with Korea's leading therapeutic engineers, refined into a single device.</p>
+      <span class="cert-badge">Since 1994</span>
+    </div>
+    <div class="cert-item reveal" style="transition-delay:.12s">
+      <div class="cert-num">60+</div>
+      <h3 class="cert-title">Countries Worldwide</h3>
+      <p class="cert-desc">Ceragem's therapeutic technology is trusted across six continents — from wellness clinics to the world's most considered homes.</p>
+      <span class="cert-badge">Global Presence</span>
+    </div>
+    <div class="cert-item reveal" style="transition-delay:.24s">
+      <div class="cert-num" style="font-family:'Pretendard',sans-serif;font-size:36px;letter-spacing:0.04em;">정식</div>
+      <h3 class="cert-title">Korean Medical Device Certified</h3>
+      <p class="cert-desc">Recognized by the Korean MFDS — one of the world's most stringent regulatory bodies. Clinical efficacy, not just product safety.</p>
+      <span class="cert-badge">의료기기 인증</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE / BOOKING ── -->
+<section class="experience" id="booking" style="padding:0">
+  <div class="experience-inner">
+    <div class="exp-left reveal">
+      <p class="exp-eyebrow">No Obligation</p>
+      <h2 class="exp-headline">
+        Feel It<br><em>Before</em><br>You Decide.
+      </h2>
+      <p class="exp-body">
+        Our Lougheed showroom offers complimentary 30–40 minute sessions. No sales pressure — just you, the chair, and a qualified wellness advisor.
+      </p>
+      <ul class="exp-list">
+        <li>30–40 minute full session, no rush</li>
+        <li>Private, calm showroom environment</li>
+        <li>Wellness advisor on-site for questions</li>
+        <li>Lougheed, Burnaby — free parking</li>
+        <li>Available in English &amp; Korean · 한국어 상담 가능</li>
+      </ul>
+      <a href="#booking" class="btn-gold">Book Free Experience →</a>
+    </div>
+
+    <div class="exp-right">
+      <form class="booking-form reveal" style="transition-delay:.2s" onsubmit="handleSubmit(event)">
+        <h3 class="form-title">Reserve Your Session</h3>
+        <p class="form-sub">Free · No credit card · Cancel anytime</p>
+        <div class="form-row">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Your name">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Phone</label>
+          <input type="tel" class="form-input" placeholder="+1 (604) 000-0000">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Preferred Date</label>
+          <input type="date" class="form-input">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Preferred Time</label>
+          <select class="form-input">
+            <option value="" disabled selected>Select a time</option>
+            <option>10:00 AM</option><option>11:00 AM</option>
+            <option>1:00 PM</option><option>2:00 PM</option>
+            <option>3:00 PM</option><option>4:00 PM</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit" id="submit-btn">Book Free Experience →</button>
+        <p class="form-note">We'll confirm your appointment within 24 hours</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINANCING ── -->
+<section class="financing" id="financing">
+  <div class="financing-layout">
+    <div class="reveal">
+      <p class="fin-eyebrow">Flexible Ownership</p>
+      <h2 class="fin-headline">Own It From<br><em>$[X] / Month</em></h2>
+      <p class="fin-body">A long-term investment in how you live. Klarna's flexible plans make it accessible without compromise.</p>
+      <div class="fin-steps">
+        <div class="fin-step">
+          <div class="fin-step-n">01</div>
+          <div>
+            <div class="fin-step-title">Apply in minutes</div>
+            <div class="fin-step-desc">Quick pre-approval with no impact on your credit score.</div>
+          </div>
+        </div>
+        <div class="fin-step">
+          <div class="fin-step-n">02</div>
+          <div>
+            <div class="fin-step-title">Choose your terms</div>
+            <div class="fin-step-desc">Multiple installment options confirmed at time of purchase.</div>
+          </div>
+        </div>
+        <div class="fin-step">
+          <div class="fin-step-n">03</div>
+          <div>
+            <div class="fin-step-title">Take it home today</div>
+            <div class="fin-step-desc">Approval and delivery can happen the same day at our Lougheed showroom.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:.2s">
+      <div class="fin-panel">
+        <div class="fin-nums">
+          <div>
+            <div class="fin-lbl">Chair Price From</div>
+            <div class="fin-val">$6,000</div>
+          </div>
+          <div>
+            <div class="fin-lbl">Monthly From</div>
+            <div class="fin-val accent">$[X]<small>/mo</small></div>
+          </div>
+        </div>
+        <div class="klarna-row">
+          <div class="klarna-name">klarna.</div>
+          <div class="klarna-desc">Buy now, pay later — powered by Klarna via Stripe</div>
+        </div>
+        <p class="fin-disc">* Monthly payment estimates are illustrative only. Financing subject to credit approval by Klarna. All terms confirmed at time of purchase per applicable Canadian consumer lending regulations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHOWROOM ── -->
+<section class="showroom" id="showroom">
+  <div class="showroom-inner">
+    <div class="showroom-visual">
+      <img src="/images/showroom-interior.webp" alt="Ceragem Vancouver showroom" loading="lazy">
+      <div class="showroom-map-mock">
+        <div class="map-pin-row">
+          <div class="map-pin-dot"></div>
+          <div class="map-pin-name">Ceragem Vancouver</div>
+        </div>
+        <div class="map-detail">
+          Lougheed, Burnaby BC<br>
+          Free parking available
+        </div>
+      </div>
+    </div>
+
+    <div class="showroom-info reveal">
+      <p class="showroom-eyebrow">Visit Us</p>
+      <h2 class="showroom-headline">Vancouver's Only<br><em>Ceragem</em> Showroom</h2>
+
+      <div class="info-block">
+        <div class="info-lbl">Address</div>
+        <div class="info-val">[Showroom Address]<br>Lougheed, Burnaby, BC</div>
+      </div>
+      <div class="info-block">
+        <div class="info-lbl">Hours</div>
+        <div class="hours-grid">
+          <span class="h-day">Mon – Fri</span><span class="h-time">[Hours TBC]</span>
+          <span class="h-day">Saturday</span><span class="h-time">[Hours TBC]</span>
+          <span class="h-day">Sunday</span><span class="h-time">[Hours TBC]</span>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-lbl">Language</div>
+        <div class="info-val">English &amp; Korean<br><span style="font-size:13px;color:var(--bark-3)">한국어 상담 가능</span></div>
+      </div>
+
+      <a href="#booking" class="btn-primary">Book Your Free Session →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Ceragem</div>
+      <div class="footer-brand-tag">Wellness &amp; Lifestyle · Vancouver</div>
+      <p class="footer-desc">Premium Korean wellness technology. Certified therapeutic performance, designed to live beautifully in your home.</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/profile.php?id=100069145185293" class="social-btn" target="_blank">f</a>
+        <a href="https://maps.app.goo.gl/PCYsFnQeZcy2mugz8" class="social-btn" target="_blank">↗</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Collection</div>
+      <ul class="footer-links">
+        <li><a href="#">Ceragem M4</a></li>
+        <li><a href="#">Ceragem V4</a></li>
+        <li><a href="#">Ceragem M10</a></li>
+        <li><a href="#">Compare Models</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Experience</div>
+      <ul class="footer-links">
+        <li><a href="#">Book Free Session</a></li>
+        <li><a href="#">Visit Showroom</a></li>
+        <li><a href="#">Financing</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">About</div>
+      <ul class="footer-links">
+        <li><a href="#">Why Ceragem</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Certifications</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Ceragem Serabim Vancouver. All rights reserved.</span>
+    <span class="footer-kr">한국어 상담 가능 · Korean language support in-store</span>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Mobile menu
+const hamburger  = document.getElementById('navHamburger');
+const navMobile  = document.getElementById('navMobile');
+const navOverlay = document.getElementById('navOverlay');
+const navClose   = document.getElementById('navClose');
+
+function openMenu() {
+  navMobile.classList.add('open');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  navMobile.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+hamburger.addEventListener('click', openMenu);
+navClose.addEventListener('click', closeMenu);
+navClose.addEventListener('touchend', (e) => { e.preventDefault(); closeMenu(); });
+navOverlay.addEventListener('click', closeMenu);
+// Close on link tap
+navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ── A Day With Ceragem — autoplay slideshow ──
+const daySlides   = document.querySelectorAll('.day-slide');
+const dayBgs      = {
+  morning:   document.getElementById('bgMorning'),
+  afternoon: document.getElementById('bgAfternoon'),
+  evening:   document.getElementById('bgEvening')
+};
+const dayDots     = document.querySelectorAll('.day-dot');
+const dayLabel    = document.getElementById('dayTimeLabel');
+const dayBar      = document.getElementById('dayProgressBar');
+const daySection  = document.getElementById('lifestyle');
+const DURATION    = 5000; // ms per slide
+
+const timeLabels = ['7:00 AM — Morning', '1:00 PM — Afternoon', '9:00 PM — Evening'];
+const timeKeys   = ['morning', 'afternoon', 'evening'];
+let current = 0;
+let timer   = null;
+let barAnim = null;
+
+function goTo(index) {
+  // wrap
+  index = (index + daySlides.length) % daySlides.length;
+
+  // slides
+  daySlides.forEach((s, i) => s.classList.toggle('active', i === index));
+
+  // backgrounds
+  Object.entries(dayBgs).forEach(([key, el]) =>
+    el.classList.toggle('active', key === timeKeys[index])
+  );
+
+  // dots
+  dayDots.forEach((d, i) => d.classList.toggle('active', i === index));
+
+  // label
+  dayLabel.textContent = timeLabels[index];
+
+  current = index;
+  startBar();
+}
+
+function startBar() {
+  // reset bar
+  dayBar.style.transition = 'none';
+  dayBar.style.width = '0%';
+  // force reflow
+  dayBar.offsetWidth;
+  // animate
+  dayBar.style.transition = `width ${DURATION}ms linear`;
+  dayBar.style.width = '100%';
+}
+
+function startAutoplay() {
+  if (timer) clearInterval(timer);
+  timer = setInterval(() => goTo(current + 1), DURATION);
+}
+
+function stopAutoplay() {
+  clearInterval(timer);
+  timer = null;
+  dayBar.style.transition = 'none';
+  dayBar.style.width = '0%';
+}
+
+// Arrows
+document.getElementById('dayPrev').addEventListener('click', () => {
+  goTo(current - 1);
+  stopAutoplay();
+  startAutoplay();
+});
+document.getElementById('dayNext').addEventListener('click', () => {
+  goTo(current + 1);
+  stopAutoplay();
+  startAutoplay();
+});
+
+// Dot clicks
+dayDots.forEach(d => {
+  d.addEventListener('click', () => {
+    goTo(Number(d.dataset.index));
+    stopAutoplay();
+    startAutoplay();
+  });
+});
+
+// Touch swipe support (mobile)
+let touchStartX = 0;
+daySection.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+}, { passive: true });
+daySection.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) {
+    goTo(diff > 0 ? current + 1 : current - 1);
+    stopAutoplay();
+    startAutoplay();
+  }
+}, { passive: true });
+
+// Pause on hover (desktop)
+daySection.addEventListener('mouseenter', stopAutoplay);
+daySection.addEventListener('mouseleave', () => {
+  startAutoplay();
+  startBar();
+});
+
+// Start when section enters viewport
+const daySectionObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { startAutoplay(); startBar(); }
+    else stopAutoplay();
+  });
+}, { threshold: 0.3 });
+daySectionObs.observe(daySection);
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = "Request Sent — We'll Be in Touch Soon";
+  btn.style.background = 'rgba(184,148,96,.45)';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
